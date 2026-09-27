@@ -333,7 +333,7 @@ function velocity_toko20_carousel_produk($query)
 
 /**
  * Susunan widget acuan Toko 20 (demo toko20.velocitydeveloper.com), dibaca installer/isi-demo: tanpa sidebar,
- * semua widget di footer 4 kolom; kolom 4 berisi tiga widget, jadi footer diisi lewat velocity_tema_widget_area().
+ * semua widget di footer 4 kolom; kolom 1 & 4 berisi dua widget, jadi footer diisi lewat velocity_tema_widget_area().
  */
 function velocity_tema_widget_sidebar()
 {
@@ -351,10 +351,10 @@ function velocity_tema_widget_area()
         return [];
     }
     return [
-        'footer-widget-1' => [['Ekspedisi Pengiriman', '[toko20_ekspedisi]']],
-        'footer-widget-2' => [['Best Seller', '[toko20_best_seller jumlah="5"]']],
-        'footer-widget-3' => [['Bank Pembayaran', '[toko20_bank]']],
-        'footer-widget-4' => [['Sosial Media', '[toko20_sosmed]'], ['Hubungi Kami', '[toko20_kontak]'], ['Info Terbaru', '[toko20_info_terbaru]']],
+        'footer-widget-1' => [['Ekspedisi Pengiriman', '[toko20_ekspedisi]'], ['Best Seller', '[toko20_best_seller jumlah="5"]']],
+        'footer-widget-2' => [['Bank Pembayaran', '[toko20_bank]']],
+        'footer-widget-3' => [['Sosial Media', '[toko20_sosmed]']],
+        'footer-widget-4' => [['Hubungi Kami', '[toko20_kontak]'], ['Info Terbaru', '[toko20_info_terbaru]']],
     ];
 }
 

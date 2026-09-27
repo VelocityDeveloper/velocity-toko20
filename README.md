@@ -29,10 +29,10 @@ Di atas kotak konten tampil nama & deskripsi situs (Settings > General) dengan a
 Tanpa sidebar; semua widget di 4 kolom footer (Footer Widget Area 1–4), susunan demo dibaca installer lewat
 `velocity_tema_widget_area()`:
 
-- Footer 1: `[toko20_ekspedisi]`
-- Footer 2: `[toko20_best_seller jumlah="5"]`
-- Footer 3: `[toko20_bank]`
-- Footer 4: `[toko20_sosmed facebook="…" instagram="…" youtube="…" twitter="…"]`, `[toko20_kontak]`, `[toko20_info_terbaru]`
+- Footer 1: `[toko20_ekspedisi]`, `[toko20_best_seller jumlah="5"]`
+- Footer 2: `[toko20_bank]`
+- Footer 3: `[toko20_sosmed facebook="…" instagram="…" youtube="…" twitter="…"]`
+- Footer 4: `[toko20_kontak]`, `[toko20_info_terbaru]`
 - Lainnya: `[toko20_kategori]`, `[toko20_cari_produk]`, `[toko20_produk_terbaru jumlah="5"]`, `[toko20_testimoni jumlah="5"]`
 
 ### Halaman
