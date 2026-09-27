@@ -1,13 +1,12 @@
 <div class="container p-0 header-top">
     <div class="row bg-theme align-items-center justify-content-md-end px-2 m-0">
-        <div class="col-md-10 kontak-seller text-end py-2 p-0"><?php echo do_shortcode('[kontak style="false"]'); ?></div>
+        <div class="col-md-10 kontak-seller text-end py-2 p-0"><?php echo velocity_toko20_kontak('btn btn-sm btn-link', false); ?></div>
         <div class="col-md-2 py-2 px-1">
-            <form action="<?php echo get_site_url(); ?>/products" class="d-flex float-end bg-white rounded-1" method="get" style="max-width:300px;">
-                <input class="form-control form-control-sm px-2 py-1 h-auto rounded-start border-0" style="font-size: 12px;" type="text" name="s" placeholder="Cari..">
-                <button type="submit" class="border-0 btn bg-dark btn-sm py-1 h-auto rounded-0 rounded-end border-0">
-                    <svg class="bi text-white" fill="currentColor" width="16" height="16">
-                        <use href="#search"></use>
-                    </svg>
+            <form action="<?php echo esc_url(get_post_type_archive_link('store_product') ?: home_url('/')); ?>" class="d-flex float-end bg-white rounded-1" method="get" style="max-width:300px;" role="search">
+                <input class="form-control form-control-sm px-2 py-1 h-auto rounded-start border-0" style="font-size: 12px;" type="text" name="s" placeholder="Cari.." aria-label="Cari produk" value="<?php echo esc_attr(get_search_query()); ?>">
+                <input type="hidden" name="post_type" value="store_product">
+                <button type="submit" class="border-0 btn bg-dark btn-sm py-1 h-auto rounded-0 rounded-end border-0" aria-label="Cari">
+                    <?php echo str_replace('<svg ', '<svg class="text-white" ', velocity_toko20_ikon('cari')); ?>
                 </button>
             </form>
         </div>

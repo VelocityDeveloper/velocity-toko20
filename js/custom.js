@@ -1,19 +1,24 @@
-var close_btn = document.querySelector("#close-btn");
-var menu_btn = document.querySelector("#menu-btn");
-var sidebar = document.querySelector("#sidebar");
-var container = document.querySelector(".my-container");
-menu_btn.addEventListener("click", () => {
-    sidebar.classList.toggle("active-nav");
-    container.classList.toggle("active-cont");
-    menu_btn.classList.toggle("active-button");
-    document.getElementById("icon-menu").classList.toggle("fa-times");
-    document.getElementById("icon-menu").classList.toggle("fa-bars");
-});
-
-close_btn.addEventListener("click", () => {
-    sidebar.classList.toggle("active-nav");
-    container.classList.toggle("active-cont");
-    document.getElementById("icon-menu").classList.toggle("fa-times");
-    document.getElementById("icon-menu").classList.toggle("fa-bars");
-});
-
+// Menu samping (Sidebar Menu): tombol di bar atas membuka/menutup, ikon berganti garis/silang.
+(function () {
+    var tombol = document.querySelector('#menu-btn');
+    var tutup = document.querySelector('#close-btn');
+    var sidebar = document.querySelector('#sidebar');
+    var wadah = document.querySelector('.my-container');
+    if (!tombol || !sidebar) {
+        return;
+    }
+    var alih = function () {
+        var buka = sidebar.classList.toggle('active-nav');
+        if (wadah) {
+            wadah.classList.toggle('active-cont', buka);
+        }
+        tombol.classList.toggle('active-button', buka);
+        tombol.setAttribute('aria-expanded', buka ? 'true' : 'false');
+        tombol.querySelector('.ikon-buka').classList.toggle('d-none', buka);
+        tombol.querySelector('.ikon-tutup').classList.toggle('d-none', !buka);
+    };
+    tombol.addEventListener('click', alih);
+    if (tutup) {
+        tutup.addEventListener('click', alih);
+    }
+})();
